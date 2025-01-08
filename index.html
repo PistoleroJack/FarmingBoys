@@ -14,7 +14,7 @@
         .header-bar {
             background-color: #A0C213; /* Farming Simulator 25 kleur */
             color: black;
-            padding: 40px 10%; /* Extra padding voor grotere groene balk */
+            padding: 60px 10%; /* Extra padding voor grotere groene balk */
             text-align: center;
         }
         .header-bar h1 {
@@ -35,6 +35,12 @@
         .navbar {
             display: none;
         }
+        .buttons-container {
+            margin-top: 30px; /* Ruimte boven de knoppen */
+        }
+        .header-bar .button {
+            margin: 10px; /* Ruimte tussen de knoppen */
+        }
     </style>
 </head>
 <body>
@@ -43,6 +49,17 @@
     <section class="header-bar">
         <h1 class="title is-1">Welkom bij Farming Boys!</h1>
         <p class="subtitle">Speel mee met onze kleine, fijne community</p>
+
+        <!-- Extra ruimte tussen de teksten -->
+        <br><br><br>
+
+        <!-- Knoppen in de groene balk -->
+        <div class="buttons-container">
+            <a href="test" class="button is-light">Home</a>
+            <a href="test/farming-simulator" class="button is-light">Farming Simulator</a>
+            <a href="test/minecraft" class="button is-light">Minecraft</a>
+            <a href="test/euro-truck-simulator" class="button is-light">Euro Truck Simulator</a>
+        </div>
     </section>
 
     <!-- Banner afbeelding -->
