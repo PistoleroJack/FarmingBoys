@@ -14,8 +14,14 @@
         .header-bar {
             background-color: #A0C213; /* Farming Simulator 25 kleur */
             color: black;
-            padding: 10px;
+            padding: 40px 10%; /* Extra padding voor grotere groene balk */
             text-align: center;
+        }
+        .header-bar h1 {
+            font-size: 4rem; /* Vergroot de titeltekst */
+        }
+        .header-bar p {
+            font-size: 2rem; /* Vergroot de subtitel */
         }
         .section {
             padding: 30px 10%;
@@ -25,20 +31,13 @@
             padding: 10px;
             background-color: #f4f4f4;
         }
+        /* Verwijder de witte navbar (bovenste balk) */
+        .navbar {
+            display: none;
+        }
     </style>
 </head>
 <body>
-
-    <!-- Tabblad Header -->
-    <header>
-        <nav class="navbar is-transparent">
-            <div class="navbar-brand">
-                <a class="navbar-item">
-                    <img src="Farming Boys - Community.png" alt="Farming Boys" style="max-height: 50px;">
-                </a>
-            </div>
-        </nav>
-    </header>
 
     <!-- Welkomst bericht -->
     <section class="header-bar">
