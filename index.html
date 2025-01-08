@@ -16,6 +16,11 @@
             color: black;
             padding: 60px 10%; /* Extra padding voor grotere groene balk */
             text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
         .header-bar h1 {
             font-size: 4rem; /* Vergroot de titeltekst */
@@ -24,7 +29,7 @@
             font-size: 2rem; /* Vergroot de subtitel */
         }
         .section {
-            padding: 30px 10%;
+            padding: 100px 10% 30px; /* Extra ruimte boven de sectie door fixed header */
         }
         .footer {
             text-align: center;
@@ -45,20 +50,20 @@
 </head>
 <body>
 
-    <!-- Welkomst bericht -->
+    <!-- Groene balk bovenaan (fixed) -->
     <section class="header-bar">
         <h1 class="title is-1">Welkom bij Farming Boys!</h1>
         <p class="subtitle">Speel mee met onze kleine, fijne community</p>
 
-        <!-- Extra ruimte tussen de teksten -->
-        <br><br><br>
+        <!-- Extra ruimte tussen de teksten boven de knoppen -->
+        <br><br>
 
         <!-- Knoppen in de groene balk -->
         <div class="buttons-container">
-            <a href="test" class="button is-light">Home</a>
-            <a href="test/farming-simulator" class="button is-light">Farming Simulator</a>
-            <a href="test/minecraft" class="button is-light">Minecraft</a>
-            <a href="test/euro-truck-simulator" class="button is-light">Euro Truck Simulator</a>
+            <a href="/farmingboys" class="button is-light">Home</a>
+            <a href="/farmingboys/farming-simulator" class="button is-light">Farming Simulator</a>
+            <a href="/farmingboys/minecraft" class="button is-light">Minecraft</a>
+            <a href="/farmingboys/euro-truck-simulator" class="button is-light">Euro Truck Simulator</a>
         </div>
     </section>
 
@@ -68,13 +73,13 @@
     <!-- Over de Community -->
     <section class="section">
         <h2 class="title is-2">Over de Community</h2>
-        <p>Farming Boys is in 2023 begonnen op Farming Simulator 22. Vanaf dat moment spelen onze spelers samen op een van onze servers. Kom jij ook meespelen bij ons? Je kan je altijd even voorstellen in onze <a href="https://discord.gg/jFYUVhVHEY" target="_blank">onze Discord server</a>.</p>
+        <p>test</p>
     </section>
 
     <!-- Onze Servers -->
     <section class="section">
         <h2 class="title is-2">Onze servers</h2>
-        <p>Farming Boys heeft meerdere servers in bezit. Deze servers staan altijd voor iedereen open. Meer informatie over deze servers zijn te vinden in onze <a href="https://discord.gg/jFYUVhVHEY" target="_blank">onze Discord server</a>.</p>
+        <p>test</p>
     </section>
 
     <!-- Footer -->
