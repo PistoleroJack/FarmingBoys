@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Farming Boys</title>
-    <link rel="icon" type="image/png" href="Farming Boys - Community.png"> <!-- Tabblad afbeelding -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css"> <!-- Bulma CSS -->
+    <link rel="icon" type="image/png" href="Farming Boys - Community.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <style>
+        /* Algemene styling */
         .banner {
             width: 100%;
             height: auto;
+            margin: 20px 0; /* Witregels voor en na de afbeelding */
         }
         .header-bar {
-            background-color: #A0C213; /* Farming Simulator 25 kleur */
+            background-color: #A0C213;
             color: black;
             padding: 60px 10%;
             text-align: center;
@@ -31,28 +33,71 @@
             padding: 10px;
             background-color: #f4f4f4;
         }
+
+        /* Knoppen-container voor grote schermen */
         .buttons-container {
             margin-top: 50px;
+            display: flex;
+            justify-content: center;
         }
         .header-bar .button {
             margin: 10px;
         }
+
+        /* Hamburger menu styling */
+        .hamburger-menu {
+            display: none; /* Verborgen op grote schermen */
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        .mobile-menu {
+            display: none; /* Verborgen standaard */
+            position: absolute;
+            top: 60px;
+            left: 10px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .mobile-menu a {
+            display: block;
+            padding: 10px 15px;
+            color: black;
+            text-decoration: none;
+        }
+        .mobile-menu a:hover {
+            background-color: #f4f4f4;
+        }
+
+        /* Media query voor mobiele apparaten */
+        @media screen and (max-width: 768px) {
+            .buttons-container {
+                display: none; /* Verberg normale knoppen op mobiel */
+            }
+            .hamburger-menu {
+                display: block; /* Toon hamburger menu op mobiel */
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Hamburger menu (alleen op mobiel) -->
+    <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="/farmingboys">Home</a>
+        <a href="/farmingboys/farming-simulator">Farming Simulator</a>
+        <a href="/farmingboys/minecraft">Minecraft</a>
+        <a href="/farmingboys/euro-truck-simulator">Euro Truck Simulator</a>
+    </div>
 
     <!-- Groene balk bovenaan -->
     <section class="header-bar">
         <h1 class="title is-1">Welkom bij Farming Boys!</h1>
         <p class="subtitle">Speel mee met onze kleine, fijne community</p>
-
-        <!-- Knoppen in de groene balk -->
-        <div class="buttons-container">
-            <a href="index.html" class="button is-light">Home</a>
-            <a href="farming-simulator.html" class="button is-light">Farming Simulator</a>
-            <a href="minecraft.html" class="button is-light">Minecraft</a>
-            <a href="euro-truck-simulator.html" class="button is-light">Euro Truck Simulator</a>
-        </div>
     </section>
 
     <!-- Banner afbeelding -->
@@ -61,7 +106,7 @@
     <!-- Over de Community -->
     <section class="section">
         <h2 class="title is-2">Over de Community</h2>
-        <p>Farming Boys is in 2023 begonnen op Farming Simulator 22. Vanaf dat moment spelen onze spelers samen op een van onze servers. Kom jij ook meespelen bij ons? Je kan je altijd even voorstellen in <a href="https://discord.gg/jFYUVhVHEY" target="_blank">onze Discord server</a>.</p>
+        <p>Farming Boys is in 2023 begonnen op Farming Simulator 22. Vanaf dat moment spelen onze spelers samen op een van onze servers. Kom jij ook meespelen bij ons? Je kan je altijd even voorstellen in onze <a href="https://discord.gg/jFYUVhVHEY" target="_blank">onze Discord server</a>.</p>
     </section>
 
     <!-- Onze Servers -->
@@ -76,5 +121,12 @@
         <p>© 2025 Farming Boys. Alle rechten voorbehouden.</p>
     </footer>
 
+    <!-- JavaScript voor het openen en sluiten van het hamburger menu -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
 </body>
 </html>
