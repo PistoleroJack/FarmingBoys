@@ -11,13 +11,14 @@
         .banner {
             width: 100%;
             height: auto;
-            margin: 0; /* Verwijdert witruimte boven/onder de afbeelding */
+            margin: 0;
         }
         .header-bar {
             background-color: #A0C213;
             color: black;
             padding: 60px 10%;
             text-align: center;
+            position: relative;
         }
         .header-bar h1 {
             font-size: 4rem;
@@ -36,7 +37,7 @@
 
         /* Knoppen-container voor grote schermen */
         .buttons-container {
-            margin-top: 50px;
+            margin-top: 30px;
             display: flex;
             justify-content: center;
         }
@@ -48,19 +49,19 @@
         .hamburger-menu {
             display: none; /* Verborgen op grote schermen */
             position: absolute;
-            top: 10px;
-            left: 10px;
+            top: 20px;
+            left: 20px;
             font-size: 2rem;
             cursor: pointer;
         }
         .mobile-menu {
-            display: none; /* Verborgen standaard */
+            display: none;
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
+            height: 100%;
             background-color: white;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px 10px;
             box-sizing: border-box;
         }
@@ -72,15 +73,6 @@
         }
         .mobile-menu a:hover {
             background-color: #f4f4f4;
-        }
-        .mobile-menu a:first-child {
-            margin-top: 10px;
-        }
-
-        /* Home-knop direct naast de hamburger op mobiel */
-        .home-button {
-            display: inline-block;
-            margin-left: 10px;
         }
 
         /* Media query voor mobiele apparaten */
@@ -102,9 +94,8 @@
     </style>
 </head>
 <body>
-    <!-- Hamburger menu en Home-knop (alleen op mobiel) -->
+    <!-- Hamburger menu icoon (alleen op mobiel) -->
     <div class="hamburger-menu" onclick="toggleMenu()">☰</div>
-    <a href="/farmingboys" class="home-button button is-light">Home</a>
     <div class="mobile-menu" id="mobileMenu">
         <a href="/farmingboys">Home</a>
         <a href="/farmingboys/farming-simulator">Farming Simulator</a>
@@ -116,6 +107,14 @@
     <section class="header-bar">
         <h1 class="title is-1">Welkom bij Farming Boys!</h1>
         <p class="subtitle">Speel mee met onze kleine, fijne community</p>
+
+        <!-- Knoppen op desktop -->
+        <div class="buttons-container">
+            <a href="/farmingboys" class="button is-light">Home</a>
+            <a href="/farmingboys/farming-simulator" class="button is-light">Farming Simulator</a>
+            <a href="/farmingboys/minecraft" class="button is-light">Minecraft</a>
+            <a href="/farmingboys/euro-truck-simulator" class="button is-light">Euro Truck Simulator</a>
+        </div>
     </section>
 
     <!-- Banner afbeelding -->
@@ -124,13 +123,13 @@
     <!-- Over de Community -->
     <section class="section">
         <h2 class="title is-2">Over de Community</h2>
-        <p>Farming Boys is in 2023 begonnen op Farming Simulator 22. Vanaf dat moment spelen onze spelers samen op een van onze servers. Kom jij ook meespelen bij ons? Je kan je altijd even voorstellen in onze <a href="https://discord.gg/jFYUVhVHEY" target="_blank">onze Discord server</a>.</p>
+        <p>Farming Boys is in 2023 begonnen op Farming Simulator 22. Vanaf dat moment spelen onze spelers samen op een van onze servers. Kom jij ook meespelen bij ons? Je kan je altijd even voorstellen in <a href="https://discord.gg/jFYUVhVHEY" target="_blank">onze Discord server</a>.</p>
     </section>
 
     <!-- Onze Servers -->
     <section class="section">
         <h2 class="title is-2">Onze servers</h2>
-        <p>Farming Boys heeft meerdere servers in bezit. Deze servers staan altijd voor iedereen open. Meer informatie over deze servers zijn te vinden in onze <a href="https://discord.gg/jFYUVhVHEY" target="_blank">onze Discord server</a>.</p>
+        <p>Farming Boys heeft meerdere servers in bezit. Deze servers staan altijd voor iedereen open. Meer informatie over deze servers zijn te vinden in <a href="https://discord.gg/jFYUVhVHEY" target="_blank">onze Discord server</a>.</p>
     </section>
 
     <!-- Footer -->
