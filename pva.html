@@ -50,10 +50,26 @@
         .header-bar .button {
             margin: 10px;
         }
+        .navigation {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .navigation a {
+            margin-right: 15px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+        .section h3 {
+            font-size: 1.5rem;
+        }
     </style>
 </head>
 <body>
-    <!-- Groene balk bovenaan -->
+    <!-- Groene bovenbalk -->
     <section class="header-bar">
         <h1 class="title is-1">Plan van Aanpak</h1>
         <p>Vooruitblik op de volgende stappen van Farming Boys</p>
@@ -67,15 +83,22 @@
         </div>
     </section>
 
+    <!-- Navigatie secties bovenaan de pagina -->
+    <section class="navigation">
+        <a href="#volgende-aankopen">1. Volgende aankopen</a>
+        <a href="#wat-te-planten">2. Wat te planten</a>
+        <a href="#verkoop-jaargetijden">3. Verkoop jaargetijden</a>
+    </section>
+
     <!-- Plan van aanpak -->
-    <section class="section">
-        <h2 class="title is-2">Volgende aankopen</h2>
+    <section class="section" id="volgende-aankopen">
+        <h2 class="title is-2">1. Volgende aankopen</h2>
         <!-- Tabel -->
         <table>
             <thead>
                 <tr>
                     <th>Naam</th>
-                    <th>Catogorie</th>
+                    <th>Categorie</th>
                     <th>Prijs</th>
                     <th>Gekocht</th>
                 </tr>
@@ -100,7 +123,7 @@
                     <td>GeringHoff NorthStar 1830</td>
                     <td>Maïsplukkers</td>
                     <td>€156.000</td>
-                     <td style="text-align: center;">✅</td>
+                    <td style="text-align: center;">✅</td>
                 </tr>
                 <!-- Rij 4 -->
                 <tr>
@@ -111,8 +134,10 @@
                 </tr>
             </tbody>
         </table>
+    </section>
 
-        <h2 class="title is-2">Wat te planten</h2>
+    <section class="section" id="wat-te-planten">
+        <h2 class="title is-2">2. Wat te planten</h2>
         <ul>
             <li>Koolzaad</li>
             <li>Zonnebloemen</li>
@@ -122,6 +147,62 @@
             <li>Tarwe</li>
             <li>Gerst</li>
             <li>Haver</li>
+        </ul>
+    </section>
+
+    <!-- Verkoop jaargetijden -->
+    <section class="section" id="verkoop-jaargetijden">
+        <h2 class="title is-2">3. Verkoop jaargetijden</h2>
+        <p>Klopt er iets niet in de tabel? Tag dan een admin in de discord server, deze kunnen het dan verder op gaan lossen.</p>
+
+        <!-- Verkoop per maand -->
+        <h3>3.1 Januari</h3>
+        <ul>
+            <li>Boter</li>
+            <li>Kaas</li>
+            <li>Melk (in fles)</li>
+        </ul>
+
+        <h3>3.2 Februari</h3>
+        <p>In deze maand hoeft niets verkocht te worden.</p>
+
+        <h3>3.3 Maart</h3>
+        <p>Kuilvoer</p>
+
+        <h3>3.4 April</h3>
+        <ul>
+            <li>Stof</li>
+            <li>Wol</li>
+        </ul>
+
+        <h3>3.5 Mei</h3>
+        <p>Chocolade</p>
+
+        <h3>3.6 Juni</h3>
+        <p>In deze maand hoeft niets verkocht te worden.</p>
+
+        <h3>3.7 Juli</h3>
+        <ul>
+            <li>Sojabonen</li>
+            <li>Suiker</li>
+        </ul>
+
+        <h3>3.8 Augustus</h3>
+        <p>In deze maand hoeft niets verkocht te worden.</p>
+
+        <h3>3.9 September</h3>
+        <p>In deze maand hoeft niets verkocht te worden.</p>
+
+        <h3>3.10 Oktober</h3>
+        <p>In deze maand hoeft niets verkocht te worden.</p>
+
+        <h3>3.11 November</h3>
+        <p>In deze maand hoeft niets verkocht te worden.</p>
+
+        <h3>3.12 December</h3>
+        <ul>
+            <li>Aardappelchips</li>
+            <li>Boter</li>
         </ul>
     </section>
 
