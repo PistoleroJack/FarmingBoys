@@ -10,7 +10,8 @@
         .banner {
             width: 100%;
             height: auto;
-            margin: 0; /* Geen witruimte boven/onder de afbeelding */
+            margin: 0;
+            cursor: pointer;
         }
         .header-bar {
             background-color: #A0C213;
@@ -33,7 +34,7 @@
             background-color: #f4f4f4;
         }
         .buttons-container {
-            margin-top: 50px;
+            margin-top: 20px;
         }
         .header-bar .button {
             margin: 10px;
@@ -41,7 +42,6 @@
     </style>
 </head>
 <body>
-
     <!-- Groene balk bovenaan -->
     <section class="header-bar">
         <h1 class="title is-1">Welkom bij Farming Boys!</h1>
@@ -56,15 +56,13 @@
         </div>
     </section>
 
-    <!-- Klikbare banner afbeelding -->
-    <a href="/farmingboys/pva">
-        <img src="Farming Boys 16;9 - FS.png" alt="FS banner" class="banner">
-    </a>
+    <!-- Klikbare banner -->
+    <img src="Farming Boys 16;9 - Home.png" alt="Farming Simulator Banner" class="banner" onclick="location.href='pva.html'">
 
-    <!-- Over de Community -->
+    <!-- Over Farming Simulator -->
     <section class="section">
         <h2 class="title is-2">Over Farming Simulator</h2>
-        <p>We spelen samen op onze Farming Simulator-server, waar teamwork en plezier centraal staan. Sluit je aan bij onze <a href="https://discord.gg/jFYUVhVHEY" target="_blank">Discord server</a>!</p>
+        <p>Doe mee met Farming Boys in Farming Simulator! We spelen samen met mods en zonder mods, afhankelijk van de voorkeur. Heb je vragen? Je kunt ons altijd bereiken via <a href="https://discord.gg/jFYUVhVHEY" target="_blank">onze Discord server</a>.</p>
     </section>
 
     <!-- Footer -->
@@ -72,6 +70,5 @@
         <p><a href="https://discord.gg/jFYUVhVHEY" target="_blank">Join onze Discord server!</a></p>
         <p>© 2025 Farming Boys. Alle rechten voorbehouden.</p>
     </footer>
-
 </body>
 </html>
