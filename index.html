@@ -23,6 +23,7 @@
         }
         .header-bar p {
             font-size: 2rem;
+            margin-bottom: 50px; /* Consistente ruimte */
         }
         .section {
             padding: 30px 10%;
@@ -33,7 +34,7 @@
             background-color: #f4f4f4;
         }
         .buttons-container {
-            margin-top: 50px;
+            margin-top: 0; /* Geen extra marge boven de knoppen */
         }
         .header-bar .button {
             margin: 10px;
@@ -47,6 +48,37 @@
             border: 1px solid black;
             padding: 10px 15px;
             cursor: pointer;
+        }
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+        .popup {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            width: 300px;
+        }
+        .popup .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .popup button {
+            margin: 10px;
         }
     </style>
 </head>
@@ -90,22 +122,53 @@
         <p>© 2025 Farming Boys. Alle rechten voorbehouden.</p>
     </footer>
 
+    <!-- Uitlog-popup -->
+    <div class="popup-overlay" id="logoutPopup">
+        <div class="popup">
+            <button class="close-button" id="closePopup">&times;</button>
+            <h2>Wil je uitloggen?</h2>
+            <button class="button is-success" id="confirmLogout">Ja, uitloggen</button>
+            <button class="button is-danger" id="cancelLogout">Nee, ingelogd blijven</button>
+        </div>
+    </div>
+
     <!-- JavaScript voor loginfunctionaliteit -->
     <script>
-        // Check de loginstatus via sessionStorage
         const loginButton = document.getElementById('loginButton');
-        const isLoggedIn = sessionStorage.getItem('loggedIn');
+        const logoutPopup = document.getElementById('logoutPopup');
+        const closePopup = document.getElementById('closePopup');
+        const confirmLogout = document.getElementById('confirmLogout');
+        const cancelLogout = document.getElementById('cancelLogout');
 
-        // Verander de knoptekst als de gebruiker is ingelogd
+        // Check loginstatus
+        const isLoggedIn = sessionStorage.getItem('loggedIn');
         if (isLoggedIn === 'true') {
             loginButton.textContent = 'Ingelogd';
         }
 
-        // Verwijs naar de loginpagina bij klikken
+        // Login knop functionaliteit
         loginButton.addEventListener('click', () => {
             if (isLoggedIn !== 'true') {
                 window.location.href = 'login.html';
+            } else {
+                logoutPopup.style.display = 'flex';
             }
+        });
+
+        // Sluit de popup
+        closePopup.addEventListener('click', () => {
+            logoutPopup.style.display = 'none';
+        });
+
+        cancelLogout.addEventListener('click', () => {
+            logoutPopup.style.display = 'none';
+        });
+
+        // Bevestig uitloggen
+        confirmLogout.addEventListener('click', () => {
+            sessionStorage.removeItem('loggedIn');
+            logoutPopup.style.display = 'none';
+            loginButton.textContent = 'Login';
         });
     </script>
 </body>
