@@ -7,68 +7,96 @@
     <link rel="icon" type="image/png" href="Farming Boys - Community.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <style>
+        /* Algemene stijl */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Header-balk stijl */
         .header-bar {
             background-color: #A0C213;
             color: black;
             padding: 40px 10%;
             text-align: center;
         }
+
         .header-bar h1 {
             font-size: 4rem;
-            margin-bottom: 10px; /* Regelafstand tussen titel en ondertitel */
+            margin-bottom: 10px;
         }
+
         .header-bar p {
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin-bottom: 0;
         }
-        .section {
-            padding: 30px 10%;
+
+        .buttons-container .button {
+            margin: 5px;
         }
-        .section h2 {
-            margin-top: 20px; /* Witregel voor kopjes */
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px; /* Witregel boven tabel */
-        }
-        table th, table td {
-            border: 1px solid #ddd;
-            text-align: center;
-            padding: 8px;
-        }
-        table th {
-            background-color: #A0C213;
-            color: black;
-        }
-        .footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #f4f4f4;
-        }
-        .buttons-container {
-            margin-top: 20px;
-        }
-        .header-bar .button {
-            margin: 10px;
-        }
+
+        /* Navigatie stijl */
         .navigation {
             background-color: #f4f4f4;
             padding: 10px;
             border-bottom: 1px solid #ddd;
         }
+
         .navigation a {
             margin-right: 15px;
             color: #007BFF;
             text-decoration: none;
         }
+
         .navigation a:hover {
             text-decoration: underline;
         }
-        h3 {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-top: 15px;
+
+        /* Sectie stijl */
+        .section {
+            padding: 30px 10%;
+        }
+
+        .section h2 {
+            margin-bottom: 15px;
+        }
+
+        /* Tabel stijl */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 10px;
+        }
+
+        table th {
+            background-color: #A0C213;
+            color: black;
+        }
+
+        /* Footer stijl */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+            font-size: 0.9rem;
+        }
+
+        /* Login popup stijl */
+        #loginPopup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border: 2px solid #ddd;
+            z-index: 1000;
         }
     </style>
 </head>
@@ -77,8 +105,6 @@
     <section class="header-bar">
         <h1 class="title is-1">Plan van Aanpak</h1>
         <p>Vooruitblik op de volgende stappen van Farming Boys</p>
-
-        <!-- Knoppen in de groene balk -->
         <div class="buttons-container">
             <a href="index.html" class="button is-light">Home</a>
             <a href="farming-simulator.html" class="button is-light">Farming Simulator</a>
@@ -89,7 +115,7 @@
     </section>
 
     <!-- Login popup -->
-    <div id="loginPopup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:20px; border:2px solid #ddd; z-index:1000;">
+    <div id="loginPopup">
         <h2 class="title is-4">Inloggen</h2>
         <form>
             <div class="field">
@@ -109,18 +135,17 @@
         </form>
     </div>
 
-    <!-- Navigatie secties bovenaan de pagina -->
+    <!-- Navigatie secties -->
     <section class="navigation">
         <a href="#volgende-aankopen">1. Volgende aankopen</a>
         <a href="#wat-te-planten">2. Wat te planten</a>
         <a href="#verkoop-jaargetijden">3. Verkoop jaargetijden</a>
     </section>
 
-    <!-- Plan van aanpak -->
+    <!-- Volgende aankopen -->
     <section class="section" id="volgende-aankopen">
         <h2 class="title is-2">1. Volgende aankopen</h2>
         <p>Denk er ook aan om regelmatig de lening af te lossen! Probeer geld in de bankrekening te houden voor helpers en om andere essentiële dingen aan te kunnen schaffen.</p>
-        <!-- Tabel -->
         <table>
             <thead>
                 <tr>
@@ -132,14 +157,29 @@
             </thead>
             <tbody>
                 <tr>
+                    <td>Krone Big X 1180</td>
+                    <td>Oogstmachines</td>
+                    <td>€662.500</td>
+                    <td>✅</td>
+                </tr>
+                <tr>
                     <td>Land 76</td>
                     <td>Landaankoop</td>
                     <td>€463.776</td>
                     <td>✅</td>
                 </tr>
-                <!-- Andere rijen blijven hetzelfde -->
             </tbody>
         </table>
+    </section>
+
+    <!-- Wat te planten -->
+    <section class="section" id="wat-te-planten">
+        <h2 class="title is-2">2. Wat te planten</h2>
+        <ul>
+            <li>Koolzaad</li>
+            <li>Zonnebloemen</li>
+            <li>Suikerbieten</li>
+        </ul>
     </section>
 
     <!-- Verkoop jaargetijden -->
@@ -148,11 +188,13 @@
         <h3>Januari</h3>
         <ul>
             <li>Boter</li>
+            <li>Kaas</li>
         </ul>
-        <!-- Andere maanden volgen -->
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
+        <p><a href="https://discord.gg/jFYUVhVHEY" target="_blank">Join onze Discord server!</a></p>
         <p>© 2025 Farming Boys. Alle rechten voorbehouden.</p>
     </footer>
 
