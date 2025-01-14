@@ -10,7 +10,7 @@
         .banner {
             width: 100%;
             height: auto;
-            margin: 20px 0; /* Witregel rondom de afbeelding */
+            margin: 20px 0;
         }
         .header-bar {
             background-color: #A0C213;
@@ -24,7 +24,7 @@
         }
         .header-bar p {
             font-size: 2rem;
-            margin-bottom: 20px; /* Regelafstand consistentie */
+            margin-bottom: 20px;
         }
         .buttons-container {
             margin-top: 20px;
@@ -67,9 +67,6 @@
             justify-content: space-between;
             align-items: center;
         }
-        .popup-header h2 {
-            margin: 0;
-        }
         .popup-buttons {
             margin-top: 20px;
             display: flex;
@@ -87,7 +84,7 @@
         <!-- Login knop -->
         <button class="login-button" id="loginButton">Login</button>
 
-        <!-- Knoppen in de groene balk -->
+        <!-- Navigatieknoppen -->
         <div class="buttons-container">
             <a href="index.html" class="button is-light">Home</a>
             <a href="farming-simulator.html" class="button is-light">Farming Simulator</a>
@@ -96,10 +93,10 @@
         </div>
     </section>
 
-    <!-- Banner afbeelding -->
+    <!-- Banner -->
     <img src="Farming Boys 16;9 - ETS.png" alt="ETS2 banner" class="banner">
 
-    <!-- Over de Community -->
+    <!-- Over Euro Truck Simulator -->
     <section class="section">
         <h2 class="title is-2">Over Euro Truck Simulator</h2>
         <p>Wil jij met ons meerijden met een van onze ritten op de vrachtwagen? Je bent van harte welkom! We spelen zonder mods en DLC zijn niet vereist, hierdoor kan iedereen makkelijk meespelen. Mocht je nog vragen hebben kan je altijd nog terecht in <a href="https://discord.gg/jFYUVhVHEY" target="_blank">onze Discord server</a>.</p>
@@ -139,9 +136,9 @@
 
         const isLoggedIn = sessionStorage.getItem('loggedIn');
 
-        // Loginstatus checken
+        // Loginstatus controleren
         if (isLoggedIn === 'true') {
-            loginButton.textContent = 'Ingelogd';
+            loginButton.textContent = 'Uitloggen';
         }
 
         loginButton.addEventListener('click', () => {
