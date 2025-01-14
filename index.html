@@ -23,7 +23,7 @@
         }
         .header-bar p {
             font-size: 2rem;
-            margin-bottom: 50px; /* Consistente ruimte */
+            margin-bottom: 30px; /* Regelafstand consistent */
         }
         .section {
             padding: 30px 10%;
@@ -34,7 +34,7 @@
             background-color: #f4f4f4;
         }
         .buttons-container {
-            margin-top: 0; /* Geen extra marge boven de knoppen */
+            margin-top: 20px; /* Consistente ruimte */
         }
         .header-bar .button {
             margin: 10px;
@@ -49,36 +49,35 @@
             padding: 10px 15px;
             cursor: pointer;
         }
-        .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+        .popup {
             display: none;
-            justify-content: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border: 1px solid black;
+            padding: 20px;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .popup-header {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
         }
-        .popup {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            position: relative;
-            width: 300px;
-        }
-        .popup .close-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
+        .popup-close {
             background: none;
             border: none;
-            font-size: 18px;
+            font-size: 1.5rem;
             cursor: pointer;
         }
-        .popup button {
-            margin: 10px;
+        .popup-buttons {
+            margin-top: 20px;
+        }
+        .popup-buttons .button {
+            margin: 0 10px;
         }
     </style>
 </head>
@@ -122,13 +121,15 @@
         <p>© 2025 Farming Boys. Alle rechten voorbehouden.</p>
     </footer>
 
-    <!-- Uitlog-popup -->
-    <div class="popup-overlay" id="logoutPopup">
-        <div class="popup">
-            <button class="close-button" id="closePopup">&times;</button>
-            <h2>Wil je uitloggen?</h2>
-            <button class="button is-success" id="confirmLogout">Ja, uitloggen</button>
-            <button class="button is-danger" id="cancelLogout">Nee, ingelogd blijven</button>
+    <!-- Uitlog-pop-up -->
+    <div class="popup" id="logoutPopup">
+        <div class="popup-header">
+            <h3>Wil je uitloggen?</h3>
+            <button class="popup-close" id="logoutClose">&times;</button>
+        </div>
+        <div class="popup-buttons">
+            <button class="button is-success" id="logoutYes">Ja, uitloggen</button>
+            <button class="button is-danger" id="logoutNo">Nee, ingelogd blijven</button>
         </div>
     </div>
 
@@ -136,40 +137,44 @@
     <script>
         const loginButton = document.getElementById('loginButton');
         const logoutPopup = document.getElementById('logoutPopup');
-        const closePopup = document.getElementById('closePopup');
-        const confirmLogout = document.getElementById('confirmLogout');
-        const cancelLogout = document.getElementById('cancelLogout');
+        const logoutClose = document.getElementById('logoutClose');
+        const logoutYes = document.getElementById('logoutYes');
+        const logoutNo = document.getElementById('logoutNo');
 
-        // Check loginstatus
-        const isLoggedIn = sessionStorage.getItem('loggedIn');
-        if (isLoggedIn === 'true') {
-            loginButton.textContent = 'Ingelogd';
+        let isLoggedIn = sessionStorage.getItem('loggedIn') === 'true';
+
+        function updateLoginButton() {
+            if (isLoggedIn) {
+                loginButton.textContent = 'Ingelogd';
+                loginButton.onclick = openLogoutPopup;
+            } else {
+                loginButton.textContent = 'Login';
+                loginButton.onclick = () => {
+                    window.location.href = 'login.html';
+                };
+            }
         }
 
-        // Login knop functionaliteit
-        loginButton.addEventListener('click', () => {
-            if (isLoggedIn !== 'true') {
-                window.location.href = 'login.html';
-            } else {
-                logoutPopup.style.display = 'flex';
-            }
-        });
+        function openLogoutPopup() {
+            logoutPopup.style.display = 'block';
+        }
 
-        // Sluit de popup
-        closePopup.addEventListener('click', () => {
+        function closeLogoutPopup() {
             logoutPopup.style.display = 'none';
-        });
+        }
 
-        cancelLogout.addEventListener('click', () => {
-            logoutPopup.style.display = 'none';
-        });
-
-        // Bevestig uitloggen
-        confirmLogout.addEventListener('click', () => {
+        function logout() {
             sessionStorage.removeItem('loggedIn');
-            logoutPopup.style.display = 'none';
-            loginButton.textContent = 'Login';
-        });
+            isLoggedIn = false;
+            closeLogoutPopup();
+            updateLoginButton();
+        }
+
+        logoutClose.addEventListener('click', closeLogoutPopup);
+        logoutNo.addEventListener('click', closeLogoutPopup);
+        logoutYes.addEventListener('click', logout);
+
+        updateLoginButton();
     </script>
 </body>
 </html>
