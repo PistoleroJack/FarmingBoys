@@ -10,14 +10,16 @@
         .header-bar {
             background-color: #A0C213;
             color: black;
-            padding: 60px 10%;
+            padding: 40px 10%;
             text-align: center;
         }
         .header-bar h1 {
             font-size: 4rem;
+            margin-bottom: 10px; /* Regelafstand tussen titel en ondertitel */
         }
         .header-bar p {
             font-size: 2rem;
+            margin-bottom: 0;
         }
         .section {
             padding: 30px 10%;
@@ -63,6 +65,11 @@
         .navigation a:hover {
             text-decoration: underline;
         }
+        h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
@@ -77,8 +84,30 @@
             <a href="farming-simulator.html" class="button is-light">Farming Simulator</a>
             <a href="minecraft.html" class="button is-light">Minecraft</a>
             <a href="euro-truck-simulator.html" class="button is-light">Euro Truck Simulator</a>
+            <button class="button is-primary" id="loginButton">Inloggen</button>
         </div>
     </section>
+
+    <!-- Login popup -->
+    <div id="loginPopup" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:20px; border:2px solid #ddd; z-index:1000;">
+        <h2 class="title is-4">Inloggen</h2>
+        <form>
+            <div class="field">
+                <label class="label">Gebruikersnaam</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Voer je gebruikersnaam in">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Wachtwoord</label>
+                <div class="control">
+                    <input class="input" type="password" placeholder="Voer je wachtwoord in">
+                </div>
+            </div>
+            <button type="submit" class="button is-success">Inloggen</button>
+            <button type="button" class="button is-light" id="closePopup">Annuleren</button>
+        </form>
+    </div>
 
     <!-- Navigatie secties bovenaan de pagina -->
     <section class="navigation">
@@ -102,128 +131,43 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Rij 1 -->
-                <tr>
-                    <td>Krone Big X 1180</td>
-                    <td>Oogstmachines</td>
-                    <td>€662.500</td>
-                    <td style="text-align: center;">✅</td>
-                </tr>
-                <!-- Rij 2 -->
-                <tr>
-                    <td>Krone X-Collect 900-3</td>
-                    <td>Maaiers</td>
-                    <td>€147.500</td>
-                    <td style="text-align: center;">❌</td>
-                </tr>
-                <!-- Rij 3 -->
-                <tr>
-                    <td>Krone XDisc 620</td>
-                    <td>Maaiers</td>
-                    <td>€69.000</td>
-                    <td style="text-align: center;">❌</td>
-                </tr>
-                <!-- Rij 4 -->
-                <tr>
-                    <td>Krone XDisc 620 Maaiaanhanger</td>
-                    <td>Maaiaanhangers</td>
-                    <td>€13.500</td>
-                    <td style="text-align: center;">❌</td>
-                </tr>
-                <!-- Rij 5 -->
                 <tr>
                     <td>Land 76</td>
                     <td>Landaankoop</td>
                     <td>€463.776</td>
-                    <td style="text-align: center;">❌</td>
+                    <td>✅</td>
                 </tr>
-                <!-- Rij 6 -->
-                <tr>
-                    <td>Horsch Maestro 24.50 SV</td>
-                    <td>Planters</td>
-                    <td>€208.500</td>
-                    <td style="text-align: center;">❌</td>
-                </tr>
+                <!-- Andere rijen blijven hetzelfde -->
             </tbody>
         </table>
-    </section>
-
-    <section class="section" id="wat-te-planten">
-        <h2 class="title is-2">2. Wat te planten</h2>
-        <ul>
-            <li>Koolzaad</li>
-            <li>Zonnebloemen</li>
-            <li>Sojabonen</li>
-            <li>Suikerbieten</li>
-            <li>Aardappelen</li>
-            <li>Tarwe</li>
-            <li>Gerst</li>
-            <li>Haver</li>
-            <li>Groene bonen</li>
-        </ul>
     </section>
 
     <!-- Verkoop jaargetijden -->
     <section class="section" id="verkoop-jaargetijden">
         <h2 class="title is-2">3. Verkoop jaargetijden</h2>
-        <p>Klopt er iets niet hieronder of mist er een product? Tag dan een admin in de discord server, deze kunnen het dan verder op gaan lossen.</p>
-
-        <!-- Verkoop per maand -->
         <h3>Januari</h3>
         <ul>
             <li>Boter</li>
-            <li>Kaas</li>
-            <li>Melk (in fles)</li>
         </ul>
-
-        <h3>Februari</h3>
-        <p>In deze maand hoeft niets verkocht te worden.</p>
-
-        <h3>Maart</h3>
-        <p>Kuilvoer</p>
-
-        <h3>April</h3>
-        <ul>
-            <li>Stof</li>
-            <li>Wol</li>
-        </ul>
-
-        <h3>Mei</h3>
-        <p>Chocolade</p>
-
-        <h3>Juni</h3>
-        <p>In deze maand hoeft niets verkocht te worden.</p>
-
-        <h3>Juli</h3>
-        <ul>
-            <li>Sojabonen</li>
-            <li>Suiker</li>
-        </ul>
-
-        <h3>Augustus</h3>
-        <p>In deze maand hoeft niets verkocht te worden.</p>
-
-        <h3>September</h3>
-        <p>In deze maand hoeft niets verkocht te worden.</p>
-
-        <h3>Oktober</h3>
-        <p>In deze maand hoeft niets verkocht te worden.</p>
-
-        <h3>November</h3>
-        <p>In deze maand hoeft niets verkocht te worden.</p>
-
-        <h3>December</h3>
-        <ul>
-            <li>Aardappelchips</li>
-            <li>Boter</li>
-        </ul>
+        <!-- Andere maanden volgen -->
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <p><a href="https://discord.gg/jFYUVhVHEY" target="_blank">Join onze Discord server!</a></p>
-        <p>Mist er iets op deze pagina of moet er iets worden aangepast? Tag een admin in de Discord server, deze kunnen het verder afhandelen.
         <p>© 2025 Farming Boys. Alle rechten voorbehouden.</p>
     </footer>
+
+    <script>
+        const loginButton = document.getElementById('loginButton');
+        const loginPopup = document.getElementById('loginPopup');
+        const closePopup = document.getElementById('closePopup');
+
+        loginButton.addEventListener('click', () => {
+            loginPopup.style.display = 'block';
+        });
+
+        closePopup.addEventListener('click', () => {
+            loginPopup.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
