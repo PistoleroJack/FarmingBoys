@@ -16,6 +16,7 @@
             color: black;
             padding: 60px 10%;
             text-align: center;
+            position: relative;
         }
         .header-bar h1 {
             font-size: 4rem;
@@ -37,6 +38,16 @@
         .header-bar .button {
             margin: 10px;
         }
+        .login-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            padding: 10px 15px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -45,6 +56,9 @@
     <section class="header-bar">
         <h1 class="title is-1">Welkom bij Farming Boys!</h1>
         <p class="subtitle">Speel mee met onze kleine, fijne community</p>
+
+        <!-- Login knop -->
+        <button class="login-button" id="loginButton">Login</button>
 
         <!-- Knoppen in de groene balk -->
         <div class="buttons-container">
@@ -76,5 +90,23 @@
         <p>© 2025 Farming Boys. Alle rechten voorbehouden.</p>
     </footer>
 
+    <!-- JavaScript voor loginfunctionaliteit -->
+    <script>
+        // Check de loginstatus via sessionStorage
+        const loginButton = document.getElementById('loginButton');
+        const isLoggedIn = sessionStorage.getItem('loggedIn');
+
+        // Verander de knoptekst als de gebruiker is ingelogd
+        if (isLoggedIn === 'true') {
+            loginButton.textContent = 'Ingelogd';
+        }
+
+        // Verwijs naar de loginpagina bij klikken
+        loginButton.addEventListener('click', () => {
+            if (isLoggedIn !== 'true') {
+                window.location.href = 'login.html';
+            }
+        });
+    </script>
 </body>
 </html>
