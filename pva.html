@@ -7,96 +7,61 @@
     <link rel="icon" type="image/png" href="Farming Boys - Community.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
     <style>
-        /* Algemene stijl */
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        /* Header-balk stijl */
         .header-bar {
             background-color: #A0C213;
             color: black;
-            padding: 40px 10%;
+            padding: 60px 10%;
             text-align: center;
         }
-
         .header-bar h1 {
             font-size: 4rem;
-            margin-bottom: 10px;
         }
-
         .header-bar p {
-            font-size: 1.5rem;
-            margin-bottom: 0;
+            font-size: 2rem;
         }
-
-        .buttons-container .button {
-            margin: 5px;
+        .section {
+            padding: 30px 10%;
         }
-
-        /* Navigatie stijl */
+        .section h2 {
+            margin-top: 20px; /* Witregel voor kopjes */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px; /* Witregel boven tabel */
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 8px;
+        }
+        table th {
+            background-color: #A0C213;
+            color: black;
+        }
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f4f4f4;
+        }
+        .buttons-container {
+            margin-top: 20px;
+        }
+        .header-bar .button {
+            margin: 10px;
+        }
         .navigation {
             background-color: #f4f4f4;
             padding: 10px;
             border-bottom: 1px solid #ddd;
         }
-
         .navigation a {
             margin-right: 15px;
             color: #007BFF;
             text-decoration: none;
         }
-
         .navigation a:hover {
             text-decoration: underline;
-        }
-
-        /* Sectie stijl */
-        .section {
-            padding: 30px 10%;
-        }
-
-        .section h2 {
-            margin-bottom: 15px;
-        }
-
-        /* Tabel stijl */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        table th, table td {
-            border: 1px solid #ddd;
-            text-align: center;
-            padding: 10px;
-        }
-
-        table th {
-            background-color: #A0C213;
-            color: black;
-        }
-
-        /* Footer stijl */
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #f4f4f4;
-            font-size: 0.9rem;
-        }
-
-        /* Login popup stijl */
-        #loginPopup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 20px;
-            border: 2px solid #ddd;
-            z-index: 1000;
         }
     </style>
 </head>
@@ -105,45 +70,25 @@
     <section class="header-bar">
         <h1 class="title is-1">Plan van Aanpak</h1>
         <p>Vooruitblik op de volgende stappen van Farming Boys</p>
+
+        <!-- Knoppen in de groene balk -->
         <div class="buttons-container">
             <a href="index.html" class="button is-light">Home</a>
             <a href="farming-simulator.html" class="button is-light">Farming Simulator</a>
             <a href="minecraft.html" class="button is-light">Minecraft</a>
             <a href="euro-truck-simulator.html" class="button is-light">Euro Truck Simulator</a>
-            <button class="button is-primary" id="loginButton">Inloggen</button>
         </div>
     </section>
 
-    <!-- Login popup -->
-    <div id="loginPopup">
-        <h2 class="title is-4">Inloggen</h2>
-        <form>
-            <div class="field">
-                <label class="label">Gebruikersnaam</label>
-                <div class="control">
-                    <input class="input" type="text" placeholder="Voer je gebruikersnaam in">
-                </div>
-            </div>
-            <div class="field">
-                <label class="label">Wachtwoord</label>
-                <div class="control">
-                    <input class="input" type="password" placeholder="Voer je wachtwoord in">
-                </div>
-            </div>
-            <button type="submit" class="button is-success">Inloggen</button>
-            <button type="button" class="button is-light" id="closePopup">Annuleren</button>
-        </form>
-    </div>
-
-    <!-- Navigatie secties -->
+    <!-- Navigatie secties bovenaan de pagina -->
     <section class="navigation">
         <a href="#volgende-aankopen">1. Volgende aankopen</a>
         <a href="#wat-te-planten">2. Wat te planten</a>
         <a href="#verkoop-jaargetijden">3. Verkoop jaargetijden</a>
     </section>
 
-    <!-- Volgende aankopen -->
-      <section class="section" id="volgende-aankopen">
+    <!-- Plan van aanpak -->
+    <section class="section" id="volgende-aankopen">
         <h2 class="title is-2">1. Volgende aankopen</h2>
         <p>Denk er ook aan om regelmatig de lening af te lossen! Probeer geld in de bankrekening te houden voor helpers en om andere essentiële dingen aan te kunnen schaffen.</p>
         <!-- Tabel -->
@@ -203,7 +148,6 @@
         </table>
     </section>
 
-    <!-- Wat te planten -->
     <section class="section" id="wat-te-planten">
         <h2 class="title is-2">2. Wat te planten</h2>
         <ul>
@@ -278,21 +222,8 @@
     <!-- Footer -->
     <footer class="footer">
         <p><a href="https://discord.gg/jFYUVhVHEY" target="_blank">Join onze Discord server!</a></p>
+        <p>Mist er iets op deze pagina of moet er iets worden aangepast? Tag een admin in de Discord server, deze kunnen het verder afhandelen.
         <p>© 2025 Farming Boys. Alle rechten voorbehouden.</p>
     </footer>
-
-    <script>
-        const loginButton = document.getElementById('loginButton');
-        const loginPopup = document.getElementById('loginPopup');
-        const closePopup = document.getElementById('closePopup');
-
-        loginButton.addEventListener('click', () => {
-            loginPopup.style.display = 'block';
-        });
-
-        closePopup.addEventListener('click', () => {
-            loginPopup.style.display = 'none';
-        });
-    </script>
 </body>
 </html>
