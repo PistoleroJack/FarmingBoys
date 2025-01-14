@@ -18,12 +18,30 @@
             color: black;
             padding: 60px 10%;
             text-align: center;
+            position: relative;
         }
         .header-bar h1 {
             font-size: 4rem;
         }
         .header-bar p {
             font-size: 2rem;
+            margin-bottom: 20px; /* Regelafstand consistentie */
+        }
+        .buttons-container {
+            margin-top: 20px;
+        }
+        .header-bar .button {
+            margin: 10px;
+        }
+        .login-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+            padding: 10px 15px;
+            cursor: pointer;
         }
         .section {
             padding: 30px 10%;
@@ -33,11 +51,30 @@
             padding: 10px;
             background-color: #f4f4f4;
         }
-        .buttons-container {
-            margin-top: 20px;
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
-        .header-bar .button {
-            margin: 10px;
+        .popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .popup-header h2 {
+            margin: 0;
+        }
+        .popup-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
         }
     </style>
 </head>
@@ -46,6 +83,9 @@
     <section class="header-bar">
         <h1 class="title is-1">Welkom bij Farming Boys!</h1>
         <p class="subtitle">Speel mee met onze kleine, fijne community</p>
+
+        <!-- Login knop -->
+        <button class="login-button" id="loginButton">Login</button>
 
         <!-- Knoppen in de groene balk -->
         <div class="buttons-container">
@@ -70,5 +110,55 @@
         <p><a href="https://discord.gg/jFYUVhVHEY" target="_blank">Join onze Discord server!</a></p>
         <p>© 2025 Farming Boys. Alle rechten voorbehouden.</p>
     </footer>
+
+    <!-- Pop-up voor uitloggen -->
+    <div id="logoutPopup" class="popup">
+        <div class="popup-header">
+            <h2>Wil je uitloggen?</h2>
+            <button id="closePopup" aria-label="Sluiten">×</button>
+        </div>
+        <div class="popup-buttons">
+            <button id="logoutYes" class="button is-success">Ja, uitloggen</button>
+            <button id="logoutNo" class="button is-danger">Nee, ingelogd blijven</button>
+        </div>
+    </div>
+
+    <!-- JavaScript voor loginfunctionaliteit -->
+    <script>
+        const loginButton = document.getElementById('loginButton');
+        const logoutPopup = document.getElementById('logoutPopup');
+        const closePopup = document.getElementById('closePopup');
+        const logoutYes = document.getElementById('logoutYes');
+        const logoutNo = document.getElementById('logoutNo');
+
+        const isLoggedIn = sessionStorage.getItem('loggedIn');
+
+        // Loginstatus checken
+        if (isLoggedIn === 'true') {
+            loginButton.textContent = 'Ingelogd';
+        }
+
+        loginButton.addEventListener('click', () => {
+            if (isLoggedIn === 'true') {
+                logoutPopup.style.display = 'block';
+            } else {
+                window.location.href = 'login.html';
+            }
+        });
+
+        closePopup.addEventListener('click', () => {
+            logoutPopup.style.display = 'none';
+        });
+
+        logoutNo.addEventListener('click', () => {
+            logoutPopup.style.display = 'none';
+        });
+
+        logoutYes.addEventListener('click', () => {
+            sessionStorage.removeItem('loggedIn');
+            logoutPopup.style.display = 'none';
+            loginButton.textContent = 'Login';
+        });
+    </script>
 </body>
 </html>
