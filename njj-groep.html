@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NJJ Groep</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+        header {
+            background-color: #012b28;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        header img {
+            max-height: 50px;
+        }
+
+        header button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #A0C213;
+            color: white;
+            cursor: pointer;
+        }
+
+        header button:hover {
+            background-color: #8cab11;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin: 20px;
+        }
+
+        .column {
+            flex: 1;
+            max-width: 500px;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .column img {
+            width: 100%;
+            cursor: pointer;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: black;
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #012b28;
+            color: white;
+        }
+
+        footer a {
+            color: #A0C213;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="Logo (server).png" alt="NJJ Logo">
+        <button id="logoutButton">Uitloggen</button>
+    </header>
+
+    <main>
+        <div class="column">
+            <p>Join de NJJ Discord groep! In de Discord is meer informatie te vinden over wanneer de servers aan staan en over Farming Simulator in het algemeen. De Discord kan je joinen door op de afbeelding hier rechts van te klikken.</p>
+        </div>
+        <div class="column">
+            <a href="https://discord.gg/DeXSWDgSXa">
+                <img src="Logo (server).png" alt="Discord Logo">
+            </a>
+        </div>
+    </main>
+
+    <hr>
+
+    <main>
+        <div class="column">
+            <img src="YouTube-Logo-1080x1080.png" alt="YouTube Logo">
+        </div>
+        <div class="column">
+            <p>NJJ groep is ook actief op YouTube! Neem een kijkje hoe het gaat op de servers van NJJ. Hopelijk zien we je de volgende keer op de server.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 NJJ Groep | <a href="https://discord.gg/DeXSWDgSXa">Discord Link</a></p>
+    </footer>
+
+    <script>
+        // Controleer of gebruiker ingelogd is
+        if (!sessionStorage.getItem('loggedIn')) {
+            window.location.href = 'inlog.html'; // Stuur naar de inlogpagina
+        }
+
+        // Uitlogfunctionaliteit
+        document.getElementById('logoutButton').addEventListener('click', () => {
+            const confirmLogout = confirm("Weet je zeker dat je wilt uitloggen?");
+            if (confirmLogout) {
+                sessionStorage.removeItem('loggedIn'); // Verwijder inlogstatus
+                window.location.href = 'index.html'; // Stuur gebruiker naar de standaard homepagina
+            }
+        });
+    </script>
+</body>
+</html>
