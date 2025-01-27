@@ -77,16 +77,20 @@
         const passwordInput = document.getElementById('passwordInput');
         const errorMessage = document.getElementById('errorMessage');
 
-        // Correcte wachtwoorden
-        const validPasswords = ["FarmInlog", "DiscordMod"];
+        // Correcte wachtwoorden en bijbehorende routes
+        const routes = {
+            "FarmInlog": "index.html",
+            "DiscordMod": "index.html",
+            "NJJ": "njj-groep.html"
+        };
 
         loginButton.addEventListener('click', () => {
             const enteredPassword = passwordInput.value;
 
-            // Controleer of het ingevoerde wachtwoord correct is
-            if (validPasswords.includes(enteredPassword)) {
+            // Controleer of het ingevoerde wachtwoord geldig is
+            if (routes[enteredPassword]) {
                 sessionStorage.setItem('loggedIn', 'true'); // Markeer gebruiker als ingelogd
-                window.location.href = 'index.html'; // Ga terug naar de hoofdpagina
+                window.location.href = routes[enteredPassword]; // Stuur naar de juiste pagina
             } else {
                 errorMessage.style.display = 'block'; // Toon foutmelding
             }
