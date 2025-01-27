@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NJJ Groep</title>
+    <link rel="icon" type="image/png" href="Logo (server).png"> <!-- Toevoegen van de favicon -->
     <style>
         body {
             margin: 0;
@@ -13,29 +14,29 @@
 
         header {
             background-color: #012b28;
-            padding: 10px;
+            padding: 20px 10px;
             text-align: center;
             position: relative;
         }
 
         header img {
-            max-height: 50px;
+            max-height: 70px; /* Iets groter gemaakt */
         }
 
         header button {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 15px;
+            right: 15px;
             padding: 10px 20px;
-            border: none;
+            border: 1px solid black; /* Rand toegevoegd voor duidelijkheid */
             border-radius: 5px;
-            background-color: #A0C213;
-            color: white;
+            background-color: white; /* Witte achtergrond */
+            color: black; /* Zwarte tekst */
             cursor: pointer;
         }
 
         header button:hover {
-            background-color: #8cab11;
+            background-color: #f0f0f0;
         }
 
         main {
@@ -49,9 +50,6 @@
             flex: 1;
             max-width: 500px;
             margin: 10px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
         }
 
         .column img {
@@ -63,7 +61,8 @@
             border: none;
             height: 1px;
             background-color: black;
-            margin: 20px 0;
+            margin: 20px auto;
+            width: calc(100% - 200px); /* Streep korter gemaakt */
         }
 
         footer {
